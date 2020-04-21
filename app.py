@@ -23,7 +23,7 @@ def main():
     password = b'EAE846DB88F888F8770889F8D3CA304AB2466415D496EBE5B7A36F62928053F0F248C55F73'
     pattern = b'DPB\=\"(.*?)\"'
 
-
+    # Check if there are multiple .xlsm files
     xlsmCounter = len(glob.glob1('.',"*.xlsm"))
     if(xlsmCounter > 1):
         print("Only one .xlsm file must be on this folder!")
@@ -70,7 +70,14 @@ def main():
 
             # Success
             print("SUCCESS: The file out.xml has the new VBA password of 'macro'")
-            input("Press Enter to exit...")
+    
+    # Empty tmp
+    if(os.path.isdir('.tmp')):
+        print("Empting .tmp...")
+        empty_folder('.tmp')
+
+    # Exit
+    input("Press Enter to exit...")
 
 
 def empty_folder(folder):
