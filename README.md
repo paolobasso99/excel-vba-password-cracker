@@ -1,4 +1,5 @@
 # Crack Excel VBA project passwords
+Removes the VBA project password of a xlsm file.
 
 ## Steps
 1. Backup the file you want to crack
